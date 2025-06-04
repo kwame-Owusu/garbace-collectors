@@ -3,6 +3,15 @@
 
 #include "snekobject.h"
 
+
+
+void refcount_inc(snek_object_t *obj) {
+  if(!obj){
+    return;
+  }
+  obj->refcount++;
+}
+
 snek_object_t *_new_snek_object() {
   snek_object_t *obj = calloc(1, sizeof(snek_object_t));
   if (obj == NULL) {
@@ -11,7 +20,6 @@ snek_object_t *_new_snek_object() {
   obj->refcount = 1;
   return obj;
 }
-
 
 snek_object_t *new_snek_array(size_t size) {
   snek_object_t *obj = _new_snek_object();
