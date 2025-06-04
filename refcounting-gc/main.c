@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "header.h"
+#include "snekobject.h"
 #include <string.h>
 
 
