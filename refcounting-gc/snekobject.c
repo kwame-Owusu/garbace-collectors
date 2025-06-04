@@ -3,8 +3,13 @@
 
 #include "snekobject.h"
 
-//TODO
 snek_object_t *_new_snek_object() {
+  snek_object_t *obj = calloc(1, sizeof(snek_object_t));
+  if (obj == NULL) {
+    return NULL;
+  }
+  obj->refcount = 1;
+  return obj;
 }
 
 

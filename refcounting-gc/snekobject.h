@@ -33,6 +33,7 @@ typedef union SnekObjectData {
 typedef struct SnekObject {
   snek_object_kind_t kind;
   snek_object_data_t data;
+  int refcount;
 } snek_object_t;
 
 
