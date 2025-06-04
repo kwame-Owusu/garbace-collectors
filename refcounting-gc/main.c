@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "snekobject.h"
 #include <string.h>
+#include "../lib/munit.h"
 
 
 
