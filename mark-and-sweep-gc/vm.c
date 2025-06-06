@@ -1,4 +1,15 @@
 #include "vm.h"
+#include "snekobject.h"
+#include "stack.h"
+
+void vm_track_object(vm_t *vm, snek_object_t *obj) {
+  if(vm == NULL){
+    return;
+  }
+  stack_push(vm->objects, obj);
+  
+}
+
 
 void vm_frame_push(vm_t *vm, frame_t *frame) {
   stack_push(vm->frames, frame);
