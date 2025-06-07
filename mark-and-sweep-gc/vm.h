@@ -17,6 +17,10 @@ void mark(vm_t *vm);
 void trace(vm_t *vm);
 void sweep(vm_t *vm);
 
+/// Helper functions for `trace`
+void trace_blacken_object(stack_t *gray_objects, snek_object_t *ref);
+void trace_mark_object(stack_t *gray_objects, snek_object_t *ref);
+
 /// This is the function that gets called to actually do the garbage collection,
 /// but is just composed of `mark`, `trace`, and `sweep`.
 ///
