@@ -3,6 +3,15 @@
 #include "snekobject.h"
 
 
+void mark(vm_t *vm) {
+  for(int i = 0; i < vm->frames->count; i++){
+    frame_t *temp = (frame_t *)vm->frames->data[i];
+    for (int j = 0; j < temp->references->count ; j++){
+      snek_object_t *obj = (snek_object_t *)temp->references->data[j];
+      obj->is_marked = true;
+    }
+  }
+}
 
 
 void frame_reference_object(frame_t *frame, snek_object_t *obj) {
