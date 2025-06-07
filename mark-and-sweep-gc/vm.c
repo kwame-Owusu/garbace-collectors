@@ -3,6 +3,12 @@
 #include "snekobject.h"
 
 
+
+
+void frame_reference_object(frame_t *frame, snek_object_t *obj) {
+  stack_push(frame->references, obj); 
+}
+
 void vm_free(vm_t *vm) {
   for(int i = 0; i < vm->frames->count; i++){
     frame_free((snek_object_t *)vm->frames->data[i]);
