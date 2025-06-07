@@ -8,6 +8,7 @@
 
 snek_object_t *_new_snek_object(vm_t *vm) {
   snek_object_t *obj = calloc(1, sizeof(snek_object_t));
+  obj->is_marked = false;
   if (obj == NULL) {
     return NULL;
   }
